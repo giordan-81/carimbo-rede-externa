@@ -120,26 +120,268 @@
                         </div>
                     </div>
                     
-                    <!-- TX/RX Física e Potência -->
-                    <div class="row mt-3">
-                        <div class="col-md-6">
-                            <label for="txFisico" class="form-label">TX Física:</label>
-                            <input type="text" id="txFisico" class="form-control" placeholder="Ex: ARMARIO/DGO01/F01">
+                    <!-- TX/RX Física Section -->
+                    <div class="section-header">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-exchange-alt me-2"></i>TX Física e RX Física
+                        </h3>
+                    </div>
+
+                    <!-- TX Física -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="txFisico" class="form-label">
+                                <i class="fas fa-arrow-up me-2"></i>TX: Física
+                            </label>
+                            <input type="text" 
+                                   class="form-control form-control-technical" 
+                                   id="txFisico" 
+                                   readonly 
+                                   placeholder="Clique nos botões abaixo para preencher">
                         </div>
-                        <div class="col-md-6">
-                            <label for="rxFisico" class="form-label">RX Física:</label>
-                            <input type="text" id="rxFisico" class="form-control" placeholder="Ex: FL01/BT01/MOD06/F01">
+
+                        <div class="selection-container" data-ponta="B" data-campo="txFisico">
+                            <!-- Outdoor Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-building me-2"></i>Outdoor
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="APM30H">APM30H</button>
+                                    <button type="button" class="btn-selection" data-value="ARMARIO">Armário</button>
+                                    <button type="button" class="btn-selection" data-value="OMIBRA_BT">OMIBRA_BT</button>
+                                </div>
+                            </div>
+
+                            <!-- FILA Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-list-ol me-2"></i>Indoor FILA
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="FL01">01</button>
+                                    <button type="button" class="btn-selection" data-value="FL02">02</button>
+                                    <button type="button" class="btn-selection" data-value="FL03">03</button>
+                                    <button type="button" class="btn-selection" data-value="FL04">04</button>
+                                    <button type="button" class="btn-selection" data-value="FL05">05</button>
+                                    <button type="button" class="btn-selection" data-value="FL06">06</button>
+                                    <button type="button" class="btn-selection" data-value="FLA">A</button>
+                                    <button type="button" class="btn-selection" data-value="FLB">B</button>
+                                    <button type="button" class="btn-selection" data-value="FLC">C</button>
+                                    <button type="button" class="btn-selection" data-value="FLD">D</button>
+                                    <button type="button" class="btn-selection" data-value="FLE">E</button>
+                                    <button type="button" class="btn-selection" data-value="FLF">F</button>
+                                </div>
+                            </div>
+
+                            <!-- BT Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-server me-2"></i>Indoor BT
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="BT01">01</button>
+                                    <button type="button" class="btn-selection" data-value="BT02">02</button>
+                                    <button type="button" class="btn-selection" data-value="BT03">03</button>
+                                    <button type="button" class="btn-selection" data-value="BT04">04</button>
+                                    <button type="button" class="btn-selection" data-value="BT05">05</button>
+                                    <button type="button" class="btn-selection" data-value="BT06">06</button>
+                                    <button type="button" class="btn-selection" data-value="BT07">07</button>
+                                    <button type="button" class="btn-selection" data-value="BT08">08</button>
+                                </div>
+                            </div>
+
+                            <!-- DGO Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-project-diagram me-2"></i>DGO
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="DGO01">01</button>
+                                    <button type="button" class="btn-selection" data-value="DGO02">02</button>
+                                    <button type="button" class="btn-selection" data-value="DGO03">03</button>
+                                    <button type="button" class="btn-selection" data-value="DGO04">04</button>
+                                    <button type="button" class="btn-selection" data-value="DGO05">05</button>
+                                    <button type="button" class="btn-selection" data-value="DGO06">06</button>
+                                </div>
+                            </div>
+
+                            <!-- DGO MÓDULOS Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-th-large me-2"></i>DGO MÓDULOS
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="MOD01">01</button>
+                                    <button type="button" class="btn-selection" data-value="MOD02">02</button>
+                                    <button type="button" class="btn-selection" data-value="MOD03">03</button>
+                                    <button type="button" class="btn-selection" data-value="MOD04">04</button>
+                                    <button type="button" class="btn-selection" data-value="MOD05">05</button>
+                                    <button type="button" class="btn-selection" data-value="MOD06">06</button>
+                                    <button type="button" class="btn-selection" data-value="MOD07">07</button>
+                                    <button type="button" class="btn-selection" data-value="MOD08">08</button>
+                                    <button type="button" class="btn-selection" data-value="MOD09">09</button>
+                                    <button type="button" class="btn-selection" data-value="MOD10">10</button>
+                                    <button type="button" class="btn-selection" data-value="MOD11">11</button>
+                                    <button type="button" class="btn-selection" data-value="MOD12">12</button>
+                                </div>
+                            </div>
+
+                            <!-- FIBRAS Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-network-wired me-2"></i>FIBRAS
+                                </div>
+                                <div class="button-wrapper fibras-grid" id="txFibrasButtons">
+                                    <!-- Fibras 01-36 will be generated by JavaScript -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="row mt-2">
-                        <div class="col-md-6">
-                            <label for="txPotencia" class="form-label">TX Potência:</label>
-                            <input type="text" id="txPotencia" class="form-control" placeholder="Ex: 66">
+
+                    <!-- RX Física -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="rxFisico" class="form-label">
+                                <i class="fas fa-arrow-down me-2"></i>RX: Física
+                            </label>
+                            <input type="text" 
+                                   class="form-control form-control-technical" 
+                                   id="rxFisico" 
+                                   readonly 
+                                   placeholder="Clique nos botões abaixo para preencher">
                         </div>
-                        <div class="col-md-6">
-                            <label for="rxPotencia" class="form-label">RX Potência:</label>
-                            <input type="text" id="rxPotencia" class="form-control" placeholder="Ex: Iiy">
+
+                        <div class="selection-container" data-ponta="B" data-campo="rxFisico">
+                            <!-- Outdoor Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-building me-2"></i>Outdoor
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="APM30H">APM30H</button>
+                                    <button type="button" class="btn-selection" data-value="ARMARIO">Armário</button>
+                                    <button type="button" class="btn-selection" data-value="OMIBRA_BT">OMIBRA_BT</button>
+                                </div>
+                            </div>
+
+                            <!-- FILA Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-list-ol me-2"></i>Indoor FILA
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="FL01">01</button>
+                                    <button type="button" class="btn-selection" data-value="FL02">02</button>
+                                    <button type="button" class="btn-selection" data-value="FL03">03</button>
+                                    <button type="button" class="btn-selection" data-value="FL04">04</button>
+                                    <button type="button" class="btn-selection" data-value="FL05">05</button>
+                                    <button type="button" class="btn-selection" data-value="FL06">06</button>
+                                    <button type="button" class="btn-selection" data-value="FLA">A</button>
+                                    <button type="button" class="btn-selection" data-value="FLB">B</button>
+                                    <button type="button" class="btn-selection" data-value="FLC">C</button>
+                                    <button type="button" class="btn-selection" data-value="FLD">D</button>
+                                    <button type="button" class="btn-selection" data-value="FLE">E</button>
+                                    <button type="button" class="btn-selection" data-value="FLF">F</button>
+                                </div>
+                            </div>
+
+                            <!-- BT Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-server me-2"></i>Indoor BT
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="BT01">01</button>
+                                    <button type="button" class="btn-selection" data-value="BT02">02</button>
+                                    <button type="button" class="btn-selection" data-value="BT03">03</button>
+                                    <button type="button" class="btn-selection" data-value="BT04">04</button>
+                                    <button type="button" class="btn-selection" data-value="BT05">05</button>
+                                    <button type="button" class="btn-selection" data-value="BT06">06</button>
+                                    <button type="button" class="btn-selection" data-value="BT07">07</button>
+                                    <button type="button" class="btn-selection" data-value="BT08">08</button>
+                                </div>
+                            </div>
+
+                            <!-- DGO Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-project-diagram me-2"></i>DGO
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="DGO01">01</button>
+                                    <button type="button" class="btn-selection" data-value="DGO02">02</button>
+                                    <button type="button" class="btn-selection" data-value="DGO03">03</button>
+                                    <button type="button" class="btn-selection" data-value="DGO04">04</button>
+                                    <button type="button" class="btn-selection" data-value="DGO05">05</button>
+                                    <button type="button" class="btn-selection" data-value="DGO06">06</button>
+                                </div>
+                            </div>
+
+                            <!-- DGO MÓDULOS Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-th-large me-2"></i>DGO MÓDULOS
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="MOD01">01</button>
+                                    <button type="button" class="btn-selection" data-value="MOD02">02</button>
+                                    <button type="button" class="btn-selection" data-value="MOD03">03</button>
+                                    <button type="button" class="btn-selection" data-value="MOD04">04</button>
+                                    <button type="button" class="btn-selection" data-value="MOD05">05</button>
+                                    <button type="button" class="btn-selection" data-value="MOD06">06</button>
+                                    <button type="button" class="btn-selection" data-value="MOD07">07</button>
+                                    <button type="button" class="btn-selection" data-value="MOD08">08</button>
+                                    <button type="button" class="btn-selection" data-value="MOD09">09</button>
+                                    <button type="button" class="btn-selection" data-value="MOD10">10</button>
+                                    <button type="button" class="btn-selection" data-value="MOD11">11</button>
+                                    <button type="button" class="btn-selection" data-value="MOD12">12</button>
+                                </div>
+                            </div>
+
+                            <!-- FIBRAS Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-network-wired me-2"></i>FIBRAS
+                                </div>
+                                <div class="button-wrapper fibras-grid" id="rxFibrasButtons">
+                                    <!-- Fibras 01-36 will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TX/RX Potência Section -->
+                    <div class="section-header">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-bolt me-2"></i>TX Potência e RX Potência
+                        </h3>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txPotencia" class="form-label">
+                                        <i class="fas fa-arrow-up me-2"></i>TX: Potência
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control form-control-technical" 
+                                           id="txPotencia" 
+                                           placeholder="Ex: -5.2">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="rxPotencia" class="form-label">
+                                        <i class="fas fa-arrow-down me-2"></i>RX: Potência
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control form-control-technical" 
+                                           id="rxPotencia" 
+                                           placeholder="Ex: -12.1">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,26 +408,268 @@
                         </div>
                     </div>
                     
-                    <!-- TX/RX Física e Potência -->
-                    <div class="row mt-3">
-                        <div class="col-md-6">
-                            <label for="txFisicoA" class="form-label">TX Física:</label>
-                            <input type="text" id="txFisicoA" class="form-control" placeholder="Ex: FL01/BT01/MOD07/F01">
+                    <!-- TX/RX Física Section - Ponta A -->
+                    <div class="section-header">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-exchange-alt me-2"></i>TX Física e RX Física
+                        </h3>
+                    </div>
+
+                    <!-- TX Física A -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="txFisicoA" class="form-label">
+                                <i class="fas fa-arrow-up me-2"></i>TX: Física
+                            </label>
+                            <input type="text" 
+                                   class="form-control form-control-technical" 
+                                   id="txFisicoA" 
+                                   readonly 
+                                   placeholder="Clique nos botões abaixo para preencher">
                         </div>
-                        <div class="col-md-6">
-                            <label for="rxFisicoA" class="form-label">RX Física:</label>
-                            <input type="text" id="rxFisicoA" class="form-control" placeholder="Ex: FLA/MOD06/F01">
+
+                        <div class="selection-container" data-ponta="A" data-campo="txFisicoA">
+                            <!-- Outdoor Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-building me-2"></i>Outdoor
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="APM30H">APM30H</button>
+                                    <button type="button" class="btn-selection" data-value="ARMARIO">Armário</button>
+                                    <button type="button" class="btn-selection" data-value="OMIBRA_BT">OMIBRA_BT</button>
+                                </div>
+                            </div>
+
+                            <!-- FILA Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-list-ol me-2"></i>Indoor FILA
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="FL01">01</button>
+                                    <button type="button" class="btn-selection" data-value="FL02">02</button>
+                                    <button type="button" class="btn-selection" data-value="FL03">03</button>
+                                    <button type="button" class="btn-selection" data-value="FL04">04</button>
+                                    <button type="button" class="btn-selection" data-value="FL05">05</button>
+                                    <button type="button" class="btn-selection" data-value="FL06">06</button>
+                                    <button type="button" class="btn-selection" data-value="FLA">A</button>
+                                    <button type="button" class="btn-selection" data-value="FLB">B</button>
+                                    <button type="button" class="btn-selection" data-value="FLC">C</button>
+                                    <button type="button" class="btn-selection" data-value="FLD">D</button>
+                                    <button type="button" class="btn-selection" data-value="FLE">E</button>
+                                    <button type="button" class="btn-selection" data-value="FLF">F</button>
+                                </div>
+                            </div>
+
+                            <!-- BT Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-server me-2"></i>Indoor BT
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="BT01">01</button>
+                                    <button type="button" class="btn-selection" data-value="BT02">02</button>
+                                    <button type="button" class="btn-selection" data-value="BT03">03</button>
+                                    <button type="button" class="btn-selection" data-value="BT04">04</button>
+                                    <button type="button" class="btn-selection" data-value="BT05">05</button>
+                                    <button type="button" class="btn-selection" data-value="BT06">06</button>
+                                    <button type="button" class="btn-selection" data-value="BT07">07</button>
+                                    <button type="button" class="btn-selection" data-value="BT08">08</button>
+                                </div>
+                            </div>
+
+                            <!-- DGO Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-project-diagram me-2"></i>DGO
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="DGO01">01</button>
+                                    <button type="button" class="btn-selection" data-value="DGO02">02</button>
+                                    <button type="button" class="btn-selection" data-value="DGO03">03</button>
+                                    <button type="button" class="btn-selection" data-value="DGO04">04</button>
+                                    <button type="button" class="btn-selection" data-value="DGO05">05</button>
+                                    <button type="button" class="btn-selection" data-value="DGO06">06</button>
+                                </div>
+                            </div>
+
+                            <!-- DGO MÓDULOS Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-th-large me-2"></i>DGO MÓDULOS
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="MOD01">01</button>
+                                    <button type="button" class="btn-selection" data-value="MOD02">02</button>
+                                    <button type="button" class="btn-selection" data-value="MOD03">03</button>
+                                    <button type="button" class="btn-selection" data-value="MOD04">04</button>
+                                    <button type="button" class="btn-selection" data-value="MOD05">05</button>
+                                    <button type="button" class="btn-selection" data-value="MOD06">06</button>
+                                    <button type="button" class="btn-selection" data-value="MOD07">07</button>
+                                    <button type="button" class="btn-selection" data-value="MOD08">08</button>
+                                    <button type="button" class="btn-selection" data-value="MOD09">09</button>
+                                    <button type="button" class="btn-selection" data-value="MOD10">10</button>
+                                    <button type="button" class="btn-selection" data-value="MOD11">11</button>
+                                    <button type="button" class="btn-selection" data-value="MOD12">12</button>
+                                </div>
+                            </div>
+
+                            <!-- FIBRAS Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-network-wired me-2"></i>FIBRAS
+                                </div>
+                                <div class="button-wrapper fibras-grid" id="txFibrasButtonsA">
+                                    <!-- Fibras 01-36 will be generated by JavaScript -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="row mt-2">
-                        <div class="col-md-6">
-                            <label for="txPotenciaA" class="form-label">TX Potência:</label>
-                            <input type="text" id="txPotenciaA" class="form-control" placeholder="Ex: 55">
+
+                    <!-- RX Física A -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="rxFisicoA" class="form-label">
+                                <i class="fas fa-arrow-down me-2"></i>RX: Física
+                            </label>
+                            <input type="text" 
+                                   class="form-control form-control-technical" 
+                                   id="rxFisicoA" 
+                                   readonly 
+                                   placeholder="Clique nos botões abaixo para preencher">
                         </div>
-                        <div class="col-md-6">
-                            <label for="rxPotenciaA" class="form-label">RX Potência:</label>
-                            <input type="text" id="rxPotenciaA" class="form-control" placeholder="Ex: 876">
+
+                        <div class="selection-container" data-ponta="A" data-campo="rxFisicoA">
+                            <!-- Outdoor Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-building me-2"></i>Outdoor
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="APM30H">APM30H</button>
+                                    <button type="button" class="btn-selection" data-value="ARMARIO">Armário</button>
+                                    <button type="button" class="btn-selection" data-value="OMIBRA_BT">OMIBRA_BT</button>
+                                </div>
+                            </div>
+
+                            <!-- FILA Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-list-ol me-2"></i>Indoor FILA
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="FL01">01</button>
+                                    <button type="button" class="btn-selection" data-value="FL02">02</button>
+                                    <button type="button" class="btn-selection" data-value="FL03">03</button>
+                                    <button type="button" class="btn-selection" data-value="FL04">04</button>
+                                    <button type="button" class="btn-selection" data-value="FL05">05</button>
+                                    <button type="button" class="btn-selection" data-value="FL06">06</button>
+                                    <button type="button" class="btn-selection" data-value="FLA">A</button>
+                                    <button type="button" class="btn-selection" data-value="FLB">B</button>
+                                    <button type="button" class="btn-selection" data-value="FLC">C</button>
+                                    <button type="button" class="btn-selection" data-value="FLD">D</button>
+                                    <button type="button" class="btn-selection" data-value="FLE">E</button>
+                                    <button type="button" class="btn-selection" data-value="FLF">F</button>
+                                </div>
+                            </div>
+
+                            <!-- BT Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-server me-2"></i>Indoor BT
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="BT01">01</button>
+                                    <button type="button" class="btn-selection" data-value="BT02">02</button>
+                                    <button type="button" class="btn-selection" data-value="BT03">03</button>
+                                    <button type="button" class="btn-selection" data-value="BT04">04</button>
+                                    <button type="button" class="btn-selection" data-value="BT05">05</button>
+                                    <button type="button" class="btn-selection" data-value="BT06">06</button>
+                                    <button type="button" class="btn-selection" data-value="BT07">07</button>
+                                    <button type="button" class="btn-selection" data-value="BT08">08</button>
+                                </div>
+                            </div>
+
+                            <!-- DGO Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-project-diagram me-2"></i>DGO
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="DGO01">01</button>
+                                    <button type="button" class="btn-selection" data-value="DGO02">02</button>
+                                    <button type="button" class="btn-selection" data-value="DGO03">03</button>
+                                    <button type="button" class="btn-selection" data-value="DGO04">04</button>
+                                    <button type="button" class="btn-selection" data-value="DGO05">05</button>
+                                    <button type="button" class="btn-selection" data-value="DGO06">06</button>
+                                </div>
+                            </div>
+
+                            <!-- DGO MÓDULOS Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-th-large me-2"></i>DGO MÓDULOS
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type="button" class="btn-selection" data-value="MOD01">01</button>
+                                    <button type="button" class="btn-selection" data-value="MOD02">02</button>
+                                    <button type="button" class="btn-selection" data-value="MOD03">03</button>
+                                    <button type="button" class="btn-selection" data-value="MOD04">04</button>
+                                    <button type="button" class="btn-selection" data-value="MOD05">05</button>
+                                    <button type="button" class="btn-selection" data-value="MOD06">06</button>
+                                    <button type="button" class="btn-selection" data-value="MOD07">07</button>
+                                    <button type="button" class="btn-selection" data-value="MOD08">08</button>
+                                    <button type="button" class="btn-selection" data-value="MOD09">09</button>
+                                    <button type="button" class="btn-selection" data-value="MOD10">10</button>
+                                    <button type="button" class="btn-selection" data-value="MOD11">11</button>
+                                    <button type="button" class="btn-selection" data-value="MOD12">12</button>
+                                </div>
+                            </div>
+
+                            <!-- FIBRAS Group -->
+                            <div class="button-group">
+                                <div class="group-label">
+                                    <i class="fas fa-network-wired me-2"></i>FIBRAS
+                                </div>
+                                <div class="button-wrapper fibras-grid" id="rxFibrasButtonsA">
+                                    <!-- Fibras 01-36 will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TX/RX Potência Section - Ponta A -->
+                    <div class="section-header">
+                        <h3 class="section-subtitle">
+                            <i class="fas fa-bolt me-2"></i>TX Potência e RX Potência
+                        </h3>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txPotenciaA" class="form-label">
+                                        <i class="fas fa-arrow-up me-2"></i>TX: Potência
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control form-control-technical" 
+                                           id="txPotenciaA" 
+                                           placeholder="Ex: -5.2">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="rxPotenciaA" class="form-label">
+                                        <i class="fas fa-arrow-down me-2"></i>RX: Potência
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control form-control-technical" 
+                                           id="rxPotenciaA" 
+                                           placeholder="Ex: -12.1">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
