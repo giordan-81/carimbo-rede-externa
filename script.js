@@ -399,11 +399,30 @@ function toggleCheckbox(idChecked, others) {
 }
 
 function compartilharWhatsapp() {
-    const output = document.getElementById('output').textContent;
-    if (output && output !== 'Clique em "Gerar Carimbo" para visualizar o resultado...') {
-        const url = `https://wa.me/?text=${encodeURIComponent(output)}`;
-        window.open(url, '_blank');
+    const data = telecomForm.getFormData();
+    const stampContent = generateStampContent(data);
+    
+    // Usar compartilhamento nativo se disponível (mobile)
+    if (navigator.share) {
+        navigator.share({
+            title: 'Carimbo Rede Externa',
+            text: stampContent
+        }).then(() => {
+            showNotification('Compartilhado com sucesso!', 'success');
+        }).catch(() => {
+            // Fallback para WhatsApp
+            compartilharWhatsappFallback(stampContent);
+        });
+    } else {
+        compartilharWhatsappFallback(stampContent);
     }
+}
+
+function compartilharWhatsappFallback(stampContent) {
+    const message = encodeURIComponent(stampContent);
+    const whatsappUrl = `https://wa.me/?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+    showNotification('Redirecionando para WhatsApp...', 'info');
 }
 
 function gerarCarimbo() {
