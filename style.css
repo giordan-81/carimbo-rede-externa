@@ -1,0 +1,563 @@
+/* Modern Telecommunications Form Styling */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #64748b;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --transition: all 0.2s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.form-container {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header Styling */
+.header-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.header-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.header-subtitle {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Styling */
+.modern-form {
+    padding: 2rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--light-color);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.form-section:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.section-header {
+    margin: 2.5rem 0 1.5rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Form Controls */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.form-control-modern {
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: white;
+}
+
+.form-control-modern:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+    outline: none;
+}
+
+.form-control-technical {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.9rem;
+    background: #f1f5f9;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    transition: var(--transition);
+}
+
+.form-control-technical:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+    outline: none;
+    background: white;
+}
+
+.form-select-modern {
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: white;
+}
+
+.form-select-modern:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+    outline: none;
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-check-modern {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-check-modern .form-check-input {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.form-check-modern .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-modern .form-check-label {
+    font-weight: 500;
+    color: var(--dark-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* Button Styling */
+.btn-modern {
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-modern:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-modern:active {
+    transform: translateY(0);
+}
+
+.btn-modern.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-modern.btn-primary:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.btn-modern.btn-secondary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn-modern.btn-secondary:hover {
+    background: #475569;
+    color: white;
+}
+
+.btn-modern.btn-add {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-modern.btn-add:hover {
+    background: #059669;
+    color: white;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.input-group .form-control-modern {
+    flex: 1;
+}
+
+/* Selection Container */
+.selection-container {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.button-group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.button-group:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.group-label {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.btn-selection {
+    background: #f8fafc;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--dark-color);
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.btn-selection:hover {
+    background: #e2e8f0;
+    border-color: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+.btn-selection.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-selection:active {
+    transform: translateY(0);
+}
+
+/* Fibras Grid */
+.fibras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+    gap: 0.5rem;
+    max-width: 600px;
+}
+
+.fibras-grid .btn-selection {
+    min-width: 3rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Output Section */
+.output-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--light-color);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.output-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.output-content {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    min-height: 100px;
+    border: 1px solid #334155;
+}
+
+/* Footer */
+.footer {
+    background: #f1f5f9;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 0;
+    }
+    
+    .header-section {
+        padding: 2rem 1rem;
+    }
+    
+    .header-title {
+        font-size: 2rem;
+    }
+    
+    .modern-form {
+        padding: 1rem;
+    }
+    
+    .form-section {
+        padding: 1rem;
+    }
+    
+    .checkbox-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .button-wrapper {
+        gap: 0.25rem;
+    }
+    
+    .btn-selection {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 2.25rem;
+        min-height: 44px; /* Touch target iOS guidelines */
+    }
+    
+    /* Prevenir zoom em inputs no iOS */
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+    
+    .fibras-grid {
+        grid-template-columns: repeat(auto-fill, minmax(2.5rem, 1fr));
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-modern {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .fibras-grid {
+        grid-template-columns: repeat(auto-fill, minmax(2.25rem, 1fr));
+    }
+    
+    .btn-selection {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.75rem;
+        min-width: 2rem;
+    }
+}
+
+/* Loading and Animation States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Focus Indicators for Accessibility */
+.btn-selection:focus,
+.btn-modern:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .form-container {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .header-section {
+        background: #f8f9fa !important;
+        color: black !important;
+    }
+    
+    .btn-modern,
+    .form-actions {
+        display: none;
+    }
+}

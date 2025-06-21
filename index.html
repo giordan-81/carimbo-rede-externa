@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carimbo Rede Externa - TX/RX Física</title>
+    
+    <!-- PWA Configuration -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Carimbo Rede">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Header -->
+            <div class="header-section">
+                <h1 class="header-title">
+                    <i class="fas fa-network-wired me-3"></i>
+                    Carimbo Rede Externa
+                </h1>
+                <p class="header-subtitle">TX/RX Física - Sistema de Telecomunicações</p>
+            </div>
+
+            <!-- Main Form -->
+            <div class="modern-form">
+                <!-- TA Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-hashtag"></i>
+                        Configuração TA
+                    </h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="ta" class="form-label">Número do TA:</label>
+                            <input type="text" id="ta" class="form-control" placeholder="Ex: 64345">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rede VIVO Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-signal"></i>
+                        Rede VIVO
+                    </h3>
+                    
+                    <div class="checkbox-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="vivo1">
+                            <label class="form-check-label" for="vivo1">
+                                VIVO1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="vivo2">
+                            <label class="form-check-label" for="vivo2">
+                                VIVO2
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Técnico Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-user-cog"></i>
+                        Técnico Responsável
+                    </h3>
+                    
+                    <div class="input-group">
+                        <select id="tecnicoSelect" class="form-select">
+                            <option value="">Selecione um técnico</option>
+                        </select>
+                        <button type="button" class="btn btn-outline-primary" onclick="adicionarTecnico()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-2">
+                        <input type="text" id="novoTecnico" class="form-control" placeholder="Nome do novo técnico">
+                    </div>
+                </div>
+
+                <!-- Ponta B Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Ponta B
+                    </h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Site:</label>
+                            <div class="input-group">
+                                <select id="siteSelect" class="form-select">
+                                    <option value="">Selecione um site</option>
+                                </select>
+                                <button type="button" class="btn btn-outline-primary" onclick="adicionarSite()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <input type="text" id="novoSite" class="form-control mt-2" placeholder="Nome do novo site">
+                        </div>
+                    </div>
+                    
+                    <!-- TX/RX Física e Potência -->
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label for="txFisico" class="form-label">TX Física:</label>
+                            <input type="text" id="txFisico" class="form-control" placeholder="Ex: ARMARIO/DGO01/F01">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rxFisico" class="form-label">RX Física:</label>
+                            <input type="text" id="rxFisico" class="form-control" placeholder="Ex: FL01/BT01/MOD06/F01">
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label for="txPotencia" class="form-label">TX Potência:</label>
+                            <input type="text" id="txPotencia" class="form-control" placeholder="Ex: 66">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rxPotencia" class="form-label">RX Potência:</label>
+                            <input type="text" id="rxPotencia" class="form-control" placeholder="Ex: Iiy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ponta A Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Ponta A
+                    </h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Site:</label>
+                            <div class="input-group">
+                                <select id="siteSelectA" class="form-select">
+                                    <option value="">Selecione um site</option>
+                                </select>
+                                <button type="button" class="btn btn-outline-primary" onclick="adicionarSiteA()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <input type="text" id="novoSiteA" class="form-control mt-2" placeholder="Nome do novo site">
+                        </div>
+                    </div>
+                    
+                    <!-- TX/RX Física e Potência -->
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label for="txFisicoA" class="form-label">TX Física:</label>
+                            <input type="text" id="txFisicoA" class="form-control" placeholder="Ex: FL01/BT01/MOD07/F01">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rxFisicoA" class="form-label">RX Física:</label>
+                            <input type="text" id="rxFisicoA" class="form-control" placeholder="Ex: FLA/MOD06/F01">
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label for="txPotenciaA" class="form-label">TX Potência:</label>
+                            <input type="text" id="txPotenciaA" class="form-control" placeholder="Ex: 55">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rxPotenciaA" class="form-label">RX Potência:</label>
+                            <input type="text" id="rxPotenciaA" class="form-control" placeholder="Ex: 876">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Afetação Section -->
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Afetação
+                    </h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Backbone:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="backboneRegional" onclick="toggleCheckbox('backboneRegional', ['backboneNacional'])">
+                                <label class="form-check-label" for="backboneRegional">Regional</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="backboneNacional" onclick="toggleCheckbox('backboneNacional', ['backboneRegional'])">
+                                <label class="form-check-label" for="backboneNacional">Nacional</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label">Causa:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="causaRompimento" onclick="toggleCheckbox('causaRompimento', ['causaAtenuacao'])">
+                                <label class="form-check-label" for="causaRompimento">Rompimento</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="causaAtenuacao" onclick="toggleCheckbox('causaAtenuacao', ['causaRompimento'])">
+                                <label class="form-check-label" for="causaAtenuacao">Atenuação</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Equipamento:</label>
+                            <div class="input-group">
+                                <select id="equipamentoSelect" class="form-select">
+                                    <option value="">Selecione um equipamento</option>
+                                </select>
+                                <button type="button" class="btn btn-outline-primary" onclick="adicionarEquipamento()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <input type="text" id="novoEquipamento" class="form-control mt-2" placeholder="Nome do equipamento">
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="numeroCabo" class="form-label">Número do cabo:</label>
+                            <input type="text" id="numeroCabo" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label for="contato" class="form-label">Contato:</label>
+                            <input type="text" id="contato" class="form-control" placeholder="Ex: 45677">
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="obs" class="form-label">OBS:</label>
+                            <textarea id="obs" class="form-control" rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-modern btn-primary" onclick="gerarCarimbo()">
+                        <i class="fas fa-stamp"></i>
+                        Gerar Carimbo
+                    </button>
+                    
+                    <button type="button" class="btn btn-modern btn-success" onclick="compartilharWhatsapp()">
+                        <i class="fab fa-whatsapp"></i>
+                        Compartilhar
+                    </button>
+                    
+                    <button type="button" class="btn btn-modern btn-warning" onclick="limparFormulario()">
+                        <i class="fas fa-broom"></i>
+                        Limpar
+                    </button>
+                </div>
+
+                <!-- Output Section -->
+                <div class="output-section" id="outputSection" style="display: none;">
+                    <h3 class="output-title">
+                        <i class="fas fa-file-alt"></i>
+                        Carimbo Gerado
+                    </h3>
+                    <pre class="output-content" id="outputContent"></pre>
+                    
+                    <div class="output-actions">
+                        <button type="button" class="btn btn-outline-primary" onclick="navigator.clipboard.writeText(document.getElementById('outputContent').textContent); showNotification('Copiado!', 'success')">
+                            <i class="fas fa-copy"></i>
+                            Copiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <div class="footer-content">
+                    <i class="fas fa-network-wired me-2"></i>
+                    Sistema de Telecomunicações - Carimbo Rede Externa
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
